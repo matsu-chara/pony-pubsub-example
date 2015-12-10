@@ -1,7 +1,7 @@
 class Publisher
   let name: String
 
-  new create(name': String) =>
+  new val create(name': String) =>
     name = name'
 
   fun val register(server: Server) =>

@@ -2,10 +2,10 @@ actor Main
   new create(env:Env) =>
     let server = Server(env)
 
-    let p1: Publisher val = recover Publisher("niconare") end
-    let p2: Publisher val = recover Publisher("nicolun") end
-    let s1: Subscriber val = recover Subscriber("user1", env) end
-    let s2: Subscriber val = recover Subscriber("user2", env) end
+    let p1 = Publisher("niconare")
+    let p2 = Publisher("nicolun")
+    let s1 = Subscriber("user1", env)
+    let s2 = Subscriber("user2", env)
 
     p1.register(server)
     p2.register(server)

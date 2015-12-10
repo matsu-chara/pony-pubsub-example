@@ -2,7 +2,7 @@ class Subscriber
   let name: String
   let _env: Env
 
-  new create(name': String, env': Env) =>
+  new val create(name': String, env': Env) =>
     name = name'
     _env = env'
 
