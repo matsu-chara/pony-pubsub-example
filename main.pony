@@ -1,3 +1,5 @@
+use "collections"
+
 actor Main
   new create(env:Env) =>
     let server = Server(env)
@@ -15,3 +17,18 @@ actor Main
     p1.publish(server, "new presentation!")
     p2.publish(server, "foo joined!")
 
+    let p3 = Publisher("niconico")
+    let p4 = Publisher("neconeco")
+    let p5 = Publisher("noconoco")
+
+    let new_publishers  = recover
+      let ps = List[Publisher val]
+      ps.push(p3)
+      ps.push(p4)
+      ps.push(p5)
+    end
+
+    server.reload(consume new_publishers)
+    p3.publish(server, "niconico!")
+    p4.publish(server, "nyanyan!")
+    p5.publish(server, "kameeee!")

@@ -2,16 +2,19 @@ use "collections"
 
 actor Server
   let _env: Env
-  let pubs: List[Publisher val]
+  var pubs: List[Publisher val] iso
   let sub_workers: List[Worker]
 
   new create(env': Env) =>
     _env = env'
-    pubs = List[Publisher val]
+    pubs = recover List[Publisher val] end
     sub_workers = List[Worker]
 
   be register_publisher(pub: Publisher val) =>
     pubs.push(pub)
+
+  be reload(pubs': List[Publisher val] iso) =>
+    pubs = consume pubs'
 
   be register_subscriber(sub: Subscriber val) =>
     sub_workers.push(Worker(sub))
