@@ -32,3 +32,7 @@ actor Main
     p3.publish(server, "niconico!")
     p4.publish(server, "nyanyan!")
     p5.publish(server, "kameeee!")
+
+    // this message will be ignored
+    p1.publish(server, "new presentation!")
+

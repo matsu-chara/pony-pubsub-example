@@ -7,6 +7,9 @@ class Publisher
   fun val register(server: Server) =>
     server.register_publisher(this)
 
-  fun publish(server: Server, message: String) =>
-    server.publish(name + " sends " + message)
+  fun val publish(server: Server, message: String) =>
+    server.publish(this, name + " sends " + message)
+
+  fun box eq(that: Publisher box): Bool =>
+    name == that.name
 

@@ -2,7 +2,7 @@ use "collections"
 
 actor Server
   let _env: Env
-  var pubs: List[Publisher val] iso
+  var pubs: List[Publisher val] trn
   let sub_workers: List[Worker]
 
   new create(env': Env) =>
@@ -19,7 +19,13 @@ actor Server
   be register_subscriber(sub: Subscriber val) =>
     sub_workers.push(Worker(sub))
 
-  be publish(message: String) =>
+  be publish(sender: Publisher val, message: String) =>
+    var isRegistered = false
+    for pub in pubs.values() do
+      isRegistered = isRegistered or (sender == pub)
+    end
+    if isRegistered == false then return end
+
     for worker in sub_workers.values() do
       worker.receive(message)
     end
