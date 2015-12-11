@@ -13,3 +13,9 @@ class Publisher
   fun box eq(that: Publisher box): Bool =>
     name == that.name
 
+  fun box ne(that: Publisher box): Bool =>
+    name != that.name
+
+  fun hash(): U64 =>
+    name.hash()
+

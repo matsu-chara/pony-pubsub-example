@@ -22,7 +22,7 @@ actor Main
     let p5 = Publisher("noconoco")
 
     let new_publishers  = recover
-      let ps = SetIs[Publisher val]
+      let ps = Set[Publisher val]
       ps.set(p3)
       ps.set(p4)
       ps.set(p5)
