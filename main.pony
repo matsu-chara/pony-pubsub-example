@@ -22,10 +22,10 @@ actor Main
     let p5 = Publisher("noconoco")
 
     let new_publishers  = recover
-      let ps = List[Publisher val]
-      ps.push(p3)
-      ps.push(p4)
-      ps.push(p5)
+      let ps = SetIs[Publisher val]
+      ps.set(p3)
+      ps.set(p4)
+      ps.set(p5)
     end
 
     server.reload(consume new_publishers)
