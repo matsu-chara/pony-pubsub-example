@@ -8,4 +8,4 @@ http://www.piotrbuda.me/2015/05/implementing-chat-application-with-pony-lang.htm
 ponyでちょっとした何かを作るのが初めてなので勘違いが含まれるかもしれないのと、必ずしも最適でない書き方などをしている可能性が在るのに注意。
 
 
-解説はこちら[http://matsu-chara.hatenablog.com/entry/2015/12/12/110000]
+解説はこちら http://matsu-chara.hatenablog.com/entry/2015/12/12/110000
