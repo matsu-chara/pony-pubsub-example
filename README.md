@@ -1,5 +1,7 @@
 # pony-pubsub
 
+this is a tiny example of ponylang
+
 ponyでpub subっぽい何かを作る奴
 
 http://www.piotrbuda.me/2015/05/implementing-chat-application-with-pony-lang.html
