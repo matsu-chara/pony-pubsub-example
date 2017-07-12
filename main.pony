@@ -26,6 +26,7 @@ actor Main
       ps.set(p3)
       ps.set(p4)
       ps.set(p5)
+      ps
     end
 
     server.reload(consume new_publishers)

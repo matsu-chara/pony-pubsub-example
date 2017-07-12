@@ -20,7 +20,7 @@ actor Server
     sub_workers.push(Worker(sub))
 
   be publish(sender: Publisher val, message: String) =>
-    let isRegistered = (Set[Publisher val].set(sender) < pubs)
+    let isRegistered = pubs.contains(sender)
     if(isRegistered == false) then return end
 
     for worker in sub_workers.values() do
