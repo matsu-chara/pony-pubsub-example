@@ -4,8 +4,8 @@ actor Main
   new create(env:Env) =>
     let server = Server(env)
 
-    let p1 = Publisher("niconare")
-    let p2 = Publisher("nicolun")
+    let p1 = Publisher("foo")
+    let p2 = Publisher("bar")
     let s1 = Subscriber("user1", env)
     let s2 = Subscriber("user2", env)
 
@@ -14,12 +14,12 @@ actor Main
     s1.register(server)
     s2.register(server)
 
-    p1.publish(server, "new presentation!")
-    p2.publish(server, "foo joined!")
+    p1.publish(server, "new!")
+    p2.publish(server, "joined!")
 
-    let p3 = Publisher("niconico")
-    let p4 = Publisher("neconeco")
-    let p5 = Publisher("noconoco")
+    let p3 = Publisher("mofu")
+    let p4 = Publisher("nyan")
+    let p5 = Publisher("wan")
 
     let new_publishers  = recover
       Set[Publisher val]
@@ -29,10 +29,10 @@ actor Main
     end
 
     server.reload(consume new_publishers)
-    p3.publish(server, "niconico!")
+    p3.publish(server, "mofumofu!")
     p4.publish(server, "nyanyan!")
-    p5.publish(server, "kameeee!")
+    p5.publish(server, "wanwan!")
 
     // this message will be ignored
-    p1.publish(server, "new presentation!")
+    p1.publish(server, "new!!")
 
